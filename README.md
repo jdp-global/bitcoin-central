@@ -25,6 +25,21 @@ Linux and Windows setup work well, I found the easiest to be an Ubuntu install
         PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/var/lib/gems/1.8/bin"
 
 ## Common
+
+If you're on OS X, you can use homebrew to install libqrencode:
+#sudo brew install qrencode
+#sudo gem install qrencoder -- --with-opt-dir=/opt/local
+
+
+install rvm
+http://www.computersnyou.com/2673/2013/10/install-ruby-rails-macos-x-mavericks-10-9-mysql-step-step/
+
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+bundle
+
+
 * Install the `bundler` rubygem, it will easily manage and compile all the other dependencies
 
         $ sudo gem install bundler
@@ -32,7 +47,7 @@ Linux and Windows setup work well, I found the easiest to be an Ubuntu install
 * Fork project if relevant
 * Check out sources with git
 
-        $ git clone https://github.com/davout/bitcoin-central.git
+        $ git clone https://github.com/jdp-global/bitcoin-central.git
 
 * Get into the sources directory
 
@@ -40,7 +55,7 @@ Linux and Windows setup work well, I found the easiest to be an Ubuntu install
 
 * Compile and install the required dependencies
 
-        $ bundle
+        $ sudo bundle install
 
 * Log-in to MySQL console and run the following commands. If you are installing a production machine you'll obviously need to pick different credentials. Update the `config/database.yml` file accordingly.
 

@@ -1,5 +1,10 @@
 source 'http://rubygems.org'
 
+if RUBY_VERSION =~ /1.9/
+  Encoding.default_external = Encoding::UTF_8
+  Encoding.default_internal = Encoding::UTF_8
+end
+
 gem 'rails', '3.1.3'
 gem 'rake'
 gem 'mysql2'
@@ -29,7 +34,7 @@ gem 'will_paginate', '~> 3.0.pre2'
 gem 'rotp', '~> 1.3.0'
 
 # QR Code generation
-gem 'qrencoder'
+#gem 'qrencoder'
 
 # IBAN format validations
 gem 'iban-tools'

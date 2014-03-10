@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+#encoding: utf-8
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
@@ -11,8 +11,7 @@ end
 module BitcoinBank
   class Application < Rails::Application
     I18n.const_set :Locales, {
-      :en => "English",
-      :fr => "Français"
+      :en => "English"
     }
 
     config.i18n.default_locale = :en

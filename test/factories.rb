@@ -1,9 +1,9 @@
-Factory.define :announcement do |a|
+FactoryGirl.create(:announcement) do |a|
   a.content 'lorem ipsum dolor'
   a.active  true
 end
 
-Factory.define :user do |user|
+FactoryGirl.create(:user) do |user|
   user.name                   { |u| "BC-U#{(rand * 10 ** 6).to_i}" }
   user.email                  { |u| "#{u.name}@domain.tld" }
   user.password               "password"
@@ -15,7 +15,7 @@ Factory.define :user do |user|
   user.commission_rate        BigDecimal("0")
 end
 
-Factory.define :manager do |user|
+FactoryGirl.create(:manager) do |user|
   user.name                   { |u| "BC-U#{(rand * 10 ** 6).to_i}" }
   user.email                  { |u| "#{u.name}@domain.tld" }
   user.password               "password"
@@ -26,7 +26,7 @@ Factory.define :manager do |user|
   user.sequence(:bitcoin_address)     { |n| "1FXWhKPChEcUnSEoFQ3DGzxKe44MDbat#{n}" }
 end
 
-Factory.define :admin do |user|
+FactoryGirl.create(:admin) do |user|
   user.name                   { |u| "BC-U#{(rand * 10 ** 6).to_i}" }
   user.email                  { |u| "#{u.name}@domain.tld" }
   user.password               "password"
@@ -38,36 +38,36 @@ Factory.define :admin do |user|
 end
 
 
-Factory.define :yubikey do |yubikey|
+FactoryGirl.create(:yubikey) do |yubikey|
   yubikey.sequence(:otp) { |n| "#{n}somerandomprettylongotp" }
   yubikey.association    :user
 end
 
-Factory.define :operation do
+FactoryGirl.create(:operation) do
 end
 
-Factory.define :account do |account|
+FactoryGirl.create(:account) do |account|
   account.sequence(:name) { |n| "account#{n}" }
 end
 
-Factory.define :account_operation do |account_operation|
+FactoryGirl.create(:account_operation) do |account_operation|
   account_operation.association :account
 end
 
-Factory.define :transfer do |transfer|
+FactoryGirl.create(:transfer) do |transfer|
   transfer.association      :account
   transfer.association      :operation
   transfer.currency         "EUR"
   transfer.bt_tx_id         nil
 end
 
-Factory.define :market_order do |market_order|
+FactoryGirl.create(:market_order) do |market_order|
 end
 
-Factory.define :limit_order do |limit_order|
+FactoryGirl.create :limit_order do |limit_order|
 end
 
-Factory.define :invoice do |invoice|
+FactoryGirl.create(:invoice) do |invoice|
   invoice.amount                      BigDecimal("100.0")
   invoice.authentication_token        "some token"
   invoice.association                 :user
@@ -81,7 +81,7 @@ Factory.define :invoice do |invoice|
   }
 end
 
-Factory.define(:wire_transfer) do |wire_transfer|
+FactoryGirl.create(:wire_transfer) do |wire_transfer|
   wire_transfer.association           :account
   wire_transfer.association           :operation
   wire_transfer.association           :bank_account
@@ -89,7 +89,7 @@ Factory.define(:wire_transfer) do |wire_transfer|
   wire_transfer.currency              "EUR"
 end
 
-Factory.define :bitcoin_transfer do |transfer|
+FactoryGirl.create(:bitcoin_transfer) do |transfer|
   transfer.association          :account
   transfer.association          :operation
   transfer.amount               BigDecimal("-20")
@@ -98,7 +98,7 @@ Factory.define :bitcoin_transfer do |transfer|
   transfer.bt_tx_id             nil
 end
 
-Factory.define(:bank_account) do |bank_account|
+FactoryGirl.create(:bank_account) do |bank_account|
   bank_account.association    :user
   bank_account.bic            "SOGEFRPP"
   bank_account.iban           "FR1420041010050500013M02606"

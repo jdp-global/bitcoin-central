@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class AccountTest < ActiveSupport::TestCase
+  include FactoryGirl::Syntax::Methods
   test "should automatically create a storage account for each currency" do
     assert_difference 'Account.count' do
       Account.storage_account_for(:dummy)

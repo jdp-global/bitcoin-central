@@ -1,3 +1,4 @@
+#encoding: utf-8
 module ActionMailerDefaults
   def mail_with_logo(args, &block)
     attachments.inline['bitcoin.png'] = File.read(File.join(Rails.root, "app", "assets", "images", "bitcoin.png"))

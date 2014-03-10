@@ -5,7 +5,6 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :encrypted_password, :null => false, :default => ''
       t.string :password_salt, :null => false, :default => ''
 
-      t.confirmable
       t.recoverable
       t.rememberable
       t.trackable

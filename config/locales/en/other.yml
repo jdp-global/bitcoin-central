@@ -11,11 +11,9 @@ en:
   change_password: Change password
 
   # Generic
-  no_data: No data has been found
-
-  # controllers/informations_controller.rb
-  chart_date_format: %m/%d
-
+  no_data: "No data has been found"
+  #chart_date_format: %m%d
+ 
   # controllers/sessions_controller.rb
   sign_in_success: You logged-in successfully to your account.
   sign_in_failure: Authentication failed, check your credentials and the captcha answer
@@ -50,7 +48,7 @@ en:
   # helpers/transfers_helper.rb
   confirmations_left:
     one: 1 confirmation left
-    other: %{count} confirmations left
+    other: \%{count} confirmations left
 
   # mailers/backup_mailer.rb
   support_from: Bitcoin Central support <%{support_email}>
